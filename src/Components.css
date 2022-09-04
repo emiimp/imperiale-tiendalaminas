@@ -1,0 +1,28 @@
+.navbar-container {
+    background-color: azure;
+      border-top: 3px black solid;
+      border-bottom: 3px black solid;
+      padding-top: 8px;
+      padding-bottom: 8px;
+      font-size: 2rem;
+      text-decoration: none;
+      text-align: center;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: stretch;
+      margin-bottom: 50px;  
+      align-items: flex-start;
+  }
+  
+  .navbar-container li {
+    list-style-type: none;
+    display: inline-block;
+    padding-right: 30px;
+  }
+  
+  .navbar-container a {
+    text-decoration: none;
+    color: black;
+    display: inline-block;
+  }
+
