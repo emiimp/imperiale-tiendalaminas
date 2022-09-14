@@ -3,6 +3,7 @@ import './Components.css';
 import NavBar from './Components/NavBar/NavBar';
 import ItemListContainer from './Components/ItemListContainer/ItemListContainer';
 import Counter from './Components/Counter/Counter.js';
+import ItemDetailContainer from './Components/ItemDetailContainer/ItemDetailContainer';
 
 
 function App() {
@@ -12,9 +13,12 @@ function App() {
   return (
     <div className="App">
 
+
       <NavBar/>
 
       <ItemListContainer greeting ="¡Bienvenido!"/>
+
+      <ItemDetailContainer/>
 
       <Counter stock={stock}/>
 
