@@ -1,4 +1,4 @@
-const data = [
+export const data = [
     {
 
         id: '1',
@@ -6,6 +6,7 @@ const data = [
         artist: 'Ferdinand Hodler',
         price: '$75',
         image: 'https://uploads8.wikiart.org/images/ferdinand-hodler/lake-geneva-with-mont-blanc-before-sunrise-1918.jpg!Large.jpg',
+        category: "Precio regular",
     },
     {
 
@@ -13,7 +14,8 @@ const data = [
         title: 'Paysage avec large rivière',
         artist: 'Eugene Carriere',
         price: '$48',
-        image: 'https://uploads0.wikiart.org/images/eugene-carriere/paysage-avec-large-rivi-re-1906.jpg!Large.jpg'
+        image: 'https://uploads0.wikiart.org/images/eugene-carriere/paysage-avec-large-rivi-re-1906.jpg!Large.jpg',
+        category: "Oferta",
     },
     {
 
@@ -21,7 +23,8 @@ const data = [
         title: 'Mounted knights',
         artist: 'Viktor Vasnetsov',
         price: '$65',
-        image: 'https://uploads7.wikiart.org/images/viktor-vasnetsov/mounted-knights-1896.jpg'
+        image: 'https://uploads7.wikiart.org/images/viktor-vasnetsov/mounted-knights-1896.jpg',
+        category: "Oferta",
     },
 ];
 

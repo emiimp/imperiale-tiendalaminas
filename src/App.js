@@ -1,9 +1,10 @@
 import './App.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './Components.css';
-import NavBar from './Components/NavBar/NavBar';
-import ItemListContainer from './Components/ItemListContainer/ItemListContainer';
+import ItemListContainer from './Components/Pages/ItemListContainer/ItemListContainer';
 import Counter from './Components/Counter/Counter.js';
-import ItemDetailContainer from './Components/ItemDetailContainer/ItemDetailContainer';
+import ItemDetailContainer from './Components/Pages/ItemDetailContainer/ItemDetailContainer';
+import NavBar from './Components/NavBar/NavBar';
 
 
 function App() {
@@ -11,21 +12,26 @@ function App() {
   const stock = 3;
 
   return (
-    <div className="App">
 
-
+    <BrowserRouter>
       <NavBar/>
+      <Routes>
+        <Route path="/" element={<ItemListContainer />} />
+        <Route path="contacto" element={<div>Contacto</div>} />
+        <Route path="category/:id" element={<ItemListContainer/>} />
+        <Route path="detail/:id" element={<ItemDetailContainer/>} />
+        <Route path="category/:categoryName" element={<ItemListContainer />}/>
 
+      </Routes>
+    
       <ItemListContainer greeting ="¡Bienvenido!"/>
 
       <ItemDetailContainer/>
 
       <Counter stock={stock}/>
 
-      <header className="App-header">
-      </header>
-      
-    </div>
+    </BrowserRouter>
+    
   );
 };
 

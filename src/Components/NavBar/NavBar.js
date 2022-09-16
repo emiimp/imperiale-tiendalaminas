@@ -1,15 +1,17 @@
 import CartShoppingSolid from '../../Assets/CartShoppingSolid.svg';
 import style from '../../Components/NavBar/style.css';
+import { NavLink  } from 'react-router-dom';
 
 const NavBar = () => {
     return(
             <nav className='navbar-container'>
             <ul>
-                <li><a>Inicio</a></li>
-                <li><a>Nuestras láminas</a></li>
-                <li><a>Ofertas del mes</a></li>
-                <li><a>Contacto</a></li>
+                <li><NavLink  to={"/inicio"}>Inicio</NavLink ></li>
+                <li><NavLink  to={"/laminas"}>Nuestras láminas</NavLink ></li>
+                <li><NavLink  to={"/category/Oferta"}>Ofertas del mes</NavLink ></li>
+                <li><NavLink  to={"/contacto"}>Contacto</NavLink ></li>
                 <img src={CartShoppingSolid} className='navbar-logo' alt='cart'/>
+            
             </ul>
         </nav>
         ); 
