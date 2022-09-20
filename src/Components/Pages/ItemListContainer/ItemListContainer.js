@@ -10,16 +10,19 @@ const ItemListContainer = () => {
   const { categoryName } = useParams();
   console.log(categoryName);
 
-  const getProducts =  async() => {
-      if(categoryName){
-      const response = data.filter((item) => item.category === categoryName)
-    }else{;
-      const response = data;
-      setProductList(response)
-    }
-  }
+  
+//declarar siempre dentro del useEffect las funciones que mueran acá
 
     useEffect(() => {
+      const getProducts =  async() => {
+        if(categoryName){
+        const response = data.filter((item) => item.category === categoryName)
+        setProductList(response)
+      }else{;
+        const response = data;
+        setProductList(response)
+      }
+    }
       getProducts(); 
     }, [categoryName]);
 
