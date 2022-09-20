@@ -17,16 +17,11 @@ function App() {
       <NavBar/>
       <Routes>
         <Route path="/" element={<ItemListContainer />} />
+        <Route path="/laminas" element={<ItemListContainer />}/>
         <Route path="contacto" element={<div>Contacto</div>} />
-        <Route path="category/:id" element={<ItemListContainer/>} />
         <Route path="detail/:id" element={<ItemDetailContainer/>} />
-        <Route path="category/:categoryName" element={<ItemListContainer />}/>
-
+        <Route path="category/:category" element={<ItemListContainer />}/>
       </Routes>
-    
-      <ItemListContainer greeting ="¡Bienvenido!"/>
-
-      <ItemDetailContainer/>
 
       <Counter stock={stock}/>
 

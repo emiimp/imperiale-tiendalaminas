@@ -7,16 +7,14 @@ import ItemList from '../../ItemList/ItemList';
 const ItemListContainer = () => {
 
   const [productList, setProductList] = useState([]);
-  const { categoryName } = useParams();
-  console.log(categoryName);
+  const { category } = useParams();
+  console.log(category);
 
-  
-//declarar siempre dentro del useEffect las funciones que mueran acá
 
     useEffect(() => {
       const getProducts =  async() => {
-        if(categoryName){
-        const response = data.filter((item) => item.category === categoryName)
+        if(category){
+        const response = data.filter((item) => item.category === category)
         setProductList(response)
       }else{;
         const response = data;
@@ -24,7 +22,7 @@ const ItemListContainer = () => {
       }
     }
       getProducts(); 
-    }, [categoryName]);
+    }, [category]);
 
   return (
     <>
