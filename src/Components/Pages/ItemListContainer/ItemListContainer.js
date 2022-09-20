@@ -17,8 +17,7 @@ const ItemListContainer = () => {
         const response = data.filter((item) => item.category === category)
         setProductList(response)
       }else{;
-        const response = data;
-        setProductList(response)
+        setProductList(data)
       }
     }
       getProducts(); 
