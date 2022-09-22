@@ -15,7 +15,7 @@ const ItemDetail = ({product}) => {
       <p>{product.price}</p>
       <p>{product.category}</p>
       <p>{product.stock}</p>
-      <img src={product.image} />
+      <img src={product.image} alt="Imagen del producto"/>
       
       <ItemCount setCount={setCount} count={count}/>
       <Link to={'/cart'} onClick={handleClick}>

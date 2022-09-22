@@ -3,6 +3,7 @@ import { useState } from 'react';
 const ItemCount = ({setCount, count}) => {
 
     const onAdd = () => {
+
         setCount(count + 1);
     };
     const onRemove = () => {
@@ -15,6 +16,11 @@ const ItemCount = ({setCount, count}) => {
   return (
     <div className="item-count">
       <div>{count} items en el carrito</div>
+     
+      <button className="item-count__button" onClick={onRemove}>-</button>
+
+      <button className="item-count__button" onClick={onAdd}>+</button>
+        
     </div>
   );
 };

@@ -2,7 +2,6 @@ import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './Components.css';
 import ItemListContainer from './Components/Pages/ItemListContainer/ItemListContainer';
-import Counter from './Components/Counter/Counter.js';
 import ItemDetailContainer from './Components/Pages/ItemDetailContainer/ItemDetailContainer';
 import NavBar from './Components/NavBar/NavBar';
 import ItemDetail from './Components/ItemDetail/ItemDetail';
