@@ -1,6 +1,7 @@
 import Item from "../Item/Item";
 import style from "../../Components/ItemList/style.css";
 import { Link } from "react-router-dom";
+import ItemCount from "../ItemCount/ItemCount";
 
 const ItemList = ({ lista }) => {
     console.log(lista);
@@ -19,7 +20,9 @@ const ItemList = ({ lista }) => {
                   price={product.price} 
                   category={product.category}
                   image={product.image}
+                  stock={product.stock}
                   />
+                <ItemCount />
               </Link>
                 
             ))

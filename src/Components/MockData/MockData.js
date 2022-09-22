@@ -7,6 +7,7 @@ export const data = [
         price: '$75',
         image: 'https://uploads8.wikiart.org/images/ferdinand-hodler/lake-geneva-with-mont-blanc-before-sunrise-1918.jpg!Large.jpg',
         category: "Precio regular",
+        stock: 5,
     },
     {
 
@@ -16,6 +17,7 @@ export const data = [
         price: '$48',
         image: 'https://uploads0.wikiart.org/images/eugene-carriere/paysage-avec-large-rivi-re-1906.jpg!Large.jpg',
         category: "Oferta",
+        stock: 11,
     },
     {
 
@@ -25,6 +27,7 @@ export const data = [
         price: '$65',
         image: 'https://uploads7.wikiart.org/images/viktor-vasnetsov/mounted-knights-1896.jpg',
         category: "Oferta",
+        stock: 7,
     },
 ];
 

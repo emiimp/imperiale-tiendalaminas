@@ -1,4 +1,4 @@
-import { useState } from 'react';
+/* import { useState } from 'react';
 import style from '../../Components/Counter/style.css';
 
 const Counter = ({ stock }) => {
@@ -19,4 +19,4 @@ const Counter = ({ stock }) => {
   );
 };
 
-export default Counter;
+export default Counter; */

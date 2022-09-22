@@ -5,7 +5,7 @@ import ItemListContainer from './Components/Pages/ItemListContainer/ItemListCont
 import Counter from './Components/Counter/Counter.js';
 import ItemDetailContainer from './Components/Pages/ItemDetailContainer/ItemDetailContainer';
 import NavBar from './Components/NavBar/NavBar';
-
+import ItemDetail from './Components/ItemDetail/ItemDetail';
 
 function App() {
 
@@ -21,11 +21,11 @@ function App() {
         <Route path="contacto" element={<div>Contacto</div>} />
         <Route path="detail/:id" element={<ItemDetailContainer/>} />
         <Route path="category/:category" element={<ItemListContainer />}/>
-      </Routes>
-
-      <Counter stock={stock}/>
-
+      </Routes> 
+      
     </BrowserRouter>
+
+    
     
   );
 };
