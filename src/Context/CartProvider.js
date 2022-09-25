@@ -15,16 +15,6 @@ export const CartProvider = ({ children }) => {
         alert ("Producto agregado al carrito");
       };
 
-      /* pregunta: 
-      
-      si quiero poner:
-
-      alert (`${quantity} ${product.title} en el carrito`);
-
-      salta este error: Line 15:31:  'product' is not defined  no-undef. 
-      
-      ¿dónde tengo que definir al product */
-
       console.log('cart', [...cart, {item, quantity}]);
 
     };
