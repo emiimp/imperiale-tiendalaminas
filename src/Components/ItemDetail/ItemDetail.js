@@ -1,26 +1,35 @@
+import { useContext } from "react";
 import ItemCount from "../ItemCount/ItemCount";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { CartContext } from "../../Context/CartContext";
 
-const ItemDetail = ({product}) => {
-  const [count, setCount] = useState(0);
-  const handleClick = () => {
-    console.log(count);
+export const ItemDetail = ({ product }) => {
+
+  const { addToCart } = useContext(CartContext);
+  const [count, setCount] = useState(1);
+
+  function onAdd (product) {
+      addToCart(product, count);
   };
+
   return (
     <div className="item-detail">
-      <h1>{product.title}</h1>
-      <p>{product.id}</p>
-      <p>{product.artist}</p>
-      <p>{product.price}</p>
-      <p>{product.category}</p>
-      <p>{product.stock}</p>
-      <img src={product.image} alt="Imagen del producto"/>
+      <img src={product.image} alt={product.title}/>
+      <h2>{product.title}</h2>
+      <div className="product-information">
+        <p>{product.artist}</p>
+        <p>{product.price}</p>
+        <p>{product.category}</p>
+      </div>
       
-      <ItemCount setCount={setCount} count={count}/>
-      <Link to={'/cart'} onClick={handleClick}>
-        Ir al carrito
-      </Link>
+      <ItemCount stock={5} count={count} setCount={setCount}/>
+
+      <div>
+        <button className="add-btn" onClick={() => onAdd(product)}>
+          Agregar al carrito
+        </button>
+      </div>
     </div>
   );
 };

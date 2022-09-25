@@ -4,25 +4,27 @@ import './Components.css';
 import ItemListContainer from './Components/Pages/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './Components/Pages/ItemDetailContainer/ItemDetailContainer';
 import NavBar from './Components/NavBar/NavBar';
-import ItemDetail from './Components/ItemDetail/ItemDetail';
+import CartProvider from './Context/CartProvider';
 
 function App() {
 
-  const stock = 3;
-
   return (
 
-    <BrowserRouter>
-      <NavBar/>
-      <Routes>
-        <Route path="/" element={<ItemListContainer />} />
+    <CartProvider>
+
+      <BrowserRouter>
+
+        <NavBar/>
+        <Routes>
         <Route path="/laminas" element={<ItemListContainer />}/>
         <Route path="contacto" element={<div>Contacto</div>} />
         <Route path="detail/:id" element={<ItemDetailContainer/>} />
         <Route path="category/:category" element={<ItemListContainer />}/>
-      </Routes> 
-      
-    </BrowserRouter>
+        </Routes> 
+        
+      </BrowserRouter>
+
+    </CartProvider>
 
     
     
