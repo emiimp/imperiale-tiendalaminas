@@ -15,6 +15,7 @@ export const ItemDetail = ({ product }) => {
 
   return (
     <div className="item-detail">
+      <Link to="/">Volver</Link> 
       <img src={product.image} alt={product.title}/>
       <h2>{product.title}</h2>
       <div className="product-information">

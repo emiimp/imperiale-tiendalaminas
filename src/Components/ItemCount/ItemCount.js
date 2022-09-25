@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 const ItemCount = ({ stock, price, count, setCount }) => {
 
     const agregar = () => {
