@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import style from "../../Components/ItemDetail/style.css";
 import ItemCount from "../ItemCount/ItemCount";
 import { useState } from "react";
 import { Link } from "react-router-dom";
@@ -24,9 +25,9 @@ export const ItemDetail = ({ product }) => {
         <p>{product.category}</p>
       </div>
       
-      <ItemCount stock={5} count={count} setCount={setCount}/>
 
       <div>
+      <ItemCount stock={product.stock} count={count} price={product.price} setCount={setCount}/>
         <button className="add-btn" onClick={() => onAdd(product)}>
           Agregar al carrito
         </button>

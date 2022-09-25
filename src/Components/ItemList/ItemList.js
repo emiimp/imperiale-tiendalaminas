@@ -3,6 +3,7 @@ import style from "../../Components/ItemList/style.css";
 import { Link } from "react-router-dom";
 import ItemCount from "../ItemCount/ItemCount";
 
+
 const ItemList = ({ lista }) => {
     console.log(lista);
   return (
@@ -22,7 +23,7 @@ const ItemList = ({ lista }) => {
                   image={product.image}
                   stock={product.stock}
                   />
-                <ItemCount />
+                
               </Link>
                 
             ))
