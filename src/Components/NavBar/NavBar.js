@@ -10,8 +10,7 @@ const NavBar = () => {
                 <li><NavLink  to={"/laminas"}>Nuestras láminas</NavLink ></li>
                 <li><NavLink  to={"/category/Oferta"}>Ofertas del mes</NavLink ></li>
                 <li><NavLink  to={"/contacto"}>Contacto</NavLink ></li>
-                <img src={CartShoppingSolid} className='navbar-logo' alt='cart'/>
-            
+                <li><NavLink  to={"/cart"}><img src={CartShoppingSolid} alt="Carrito de compras" /></NavLink ></li>
             </ul>
         </nav>
         ); 

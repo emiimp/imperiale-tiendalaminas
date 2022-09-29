@@ -1,7 +1,5 @@
 import Item from "../Item/Item";
-import style from "../../Components/ItemList/style.css";
 import { Link } from "react-router-dom";
-import ItemCount from "../ItemCount/ItemCount";
 
 
 const ItemList = ({ lista }) => {
@@ -9,19 +7,19 @@ const ItemList = ({ lista }) => {
   return (
     <div className="item-list">
         {
-            lista.map((product)=>(
+            lista.map((item)=>(
               <Link 
-                key={product.id}
+                key={item.id}
                 to={"/detail/ + item.id"}
               >
                 <Item 
-                  id={product.id}
-                  title={product.title} 
-                  artist={product.artist} 
-                  price={product.price} 
-                  category={product.category}
-                  image={product.image}
-                  stock={product.stock}
+                  id={item.id}
+                  title={item.title} 
+                  artist={item.artist} 
+                  price={item.price} 
+                  category={item.category}
+                  image={item.image}
+                  stock={item.stock}
                   />
                 
               </Link>

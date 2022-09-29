@@ -7,11 +7,11 @@ const ItemDetailContainer = () => {
 
   const {id} = useParams();
 
-  const [product, setProduct] = useState({});
+  const [item, setItem] = useState({});
 
   useEffect(() => {
     getProducts.then((response) => {
-      setProduct(response[0])
+      setItem(response[0])
     })
   }, [id]);
 
@@ -23,7 +23,7 @@ const ItemDetailContainer = () => {
 
   return (
     <div>
-      {product && <ItemDetail product={product}/>}
+      {item && <ItemDetail item={item}/>}
     </div>
   )
 }

@@ -20,22 +20,33 @@ export const CartProvider = ({ children }) => {
     };
   
   const isInCart = (id) => {
-    return cart.some((item) => item.id === id);
-  };
-
-  const removeItem = (itemId) => {
-    setCart(cart.filter((item) => item.id !== itemId));
+    return cart.find((item) => item.id === id);
   };
 
   const clear = () => {
     setCart([]);
   };
 
+  const removeItem = (itemId) => {
+
+    let index = cart.findIndex((item) => item.id === itemId);
+    let newCart = [];
+    cart.forEach((item) => {
+      if (item.id === itemId) {
+       console.log(item);
+      }else {
+        newCart.push(item);
+      } 
+    });
+    setCart(newCart);
+    };
+  
   return (
-    <CartContext.Provider value={{ cart, addItem }}>
+    <CartContext.Provider value={{ cart, addItem, removeItem }}>
         {children}
     </CartContext.Provider>
   );
+
 };
 
 export default CartProvider;

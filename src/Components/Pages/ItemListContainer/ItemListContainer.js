@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import style from '../../Pages/ItemListContainer/style.css';
 import data from '../../MockData/MockData';
 import ItemList from '../../ItemList/ItemList';
+import { Link } from 'react-router-dom';
 
 const ItemListContainer = () => {
 
@@ -25,6 +26,7 @@ const ItemListContainer = () => {
 
   return (
     <>
+      <Link to="/cart">Carrito de compras</Link>
       <ItemList lista={productList}/>
     </>
     )
