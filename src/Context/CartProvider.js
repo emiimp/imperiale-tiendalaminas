@@ -32,11 +32,9 @@ export const CartProvider = ({ children }) => {
     let index = cart.findIndex((item) => item.id === itemId);
     let newCart = [];
     cart.forEach((item) => {
-      if (item.id === itemId) {
-       console.log(item);
-      }else {
+      if (item.id !== itemId) {
         newCart.push(item);
-      } 
+      }
     });
     setCart(newCart);
     };
