@@ -1,11 +1,13 @@
-const Item = ({ image,title,artist,price }) => {
+import style from './style.scss';
+
+export const Item = ({ image,title,artist,price }) => {
   return (
-    <>
-    <img width={'300px'} src={image} alt={title}/>
+    <div className='items'>
+    <img src={image} alt={title}/>
     <h2>{title}</h2>
-    <h2>{artist}</h2>
-    <h3>{price}</h3>
-    </>
+    <h3>{artist}</h3>
+    <h4>${price}</h4>
+    </div>
   );
 };
 

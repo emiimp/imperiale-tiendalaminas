@@ -1,4 +1,4 @@
-const ItemCount = ({ stock, price, count, setCount }) => {
+export const ItemCount = ({ stock, price, count, setCount }) => {
 
     const agregar = () => {
         if (count < stock) {

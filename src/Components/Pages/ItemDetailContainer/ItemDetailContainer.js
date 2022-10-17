@@ -1,25 +1,35 @@
-import { useEffect, useState } from "react";
-import ItemDetail from "../../ItemDetail/ItemDetail";
-import data from "../../MockData/MockData";
-import { useParams } from "react-router-dom";
+import { useEffect, useState } from 'react';
+import ItemDetail from '../../ItemDetail/ItemDetail';
+import { useParams } from 'react-router-dom';
+import { getFirestore, doc, getDoc } from 'firebase/firestore';
+
 
 const ItemDetailContainer = () => {
 
-  const {id} = useParams();
-
+  const { id } = useParams();
   const [item, setItem] = useState({});
 
-  useEffect(() => {
-    getProducts.then((response) => {
-      setItem(response[0])
-    })
-  }, [id]);
+  const db = getFirestore();
 
-  const getProducts =  new Promise((resolve,reject) => {
-      setTimeout(() => {
-        resolve(data)
-      }, 2000)
-    })
+  const getItem = () => {
+
+    const queryDoc = doc(db, 'products', id);
+
+    getDoc(queryDoc).then((doc) => {
+
+      if (doc.exists()) {
+        setItem({ id: doc.id, ...doc.data() });
+      } else {
+        console.log('No such document!');
+      }
+    }).catch((error) => {
+      console.log('Error getting document:', error);
+    });
+  };
+
+  useEffect(() => {
+    getItem();
+  }, [id]);
 
   return (
     <div>

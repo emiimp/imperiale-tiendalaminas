@@ -1,37 +1,32 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import style from '../../Pages/ItemListContainer/style.css';
-import data from '../../MockData/MockData';
 import ItemList from '../../ItemList/ItemList';
 import { Link } from 'react-router-dom';
+import { getFirestore, getDocs, collection, query, where } from 'firebase/firestore';
 
-const ItemListContainer = () => {
+export const ItemListContainer = () => {
 
   const [productList, setProductList] = useState([]);
   const { category } = useParams();
   console.log(category);
 
+  const db = getFirestore();
+  const queryBase = collection(db, 'products');
+  const querySnapshot = category ? query(queryBase, where('category', '==', category)) : queryBase;
 
-    useEffect(() => {
-      const getProducts =  async() => {
-        if(category){
-        const response = data.filter((item) => item.category === category)
-        setProductList(response)
-      }else{;
-        setProductList(data)
-      }
-    }
-      getProducts(); 
-    }, [category]);
+  useEffect (() => {
+    getDocs (querySnapshot).then((answer) => {
+      const products = answer.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
+      setProductList(products);
+    });
+  }, [category]);
 
   return (
     <>
-      <Link to="/cart">Carrito de compras</Link>
       <ItemList lista={productList}/>
     </>
-    )
-
+    );
 };
 
-
 export default ItemListContainer;
+

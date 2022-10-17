@@ -11,11 +11,11 @@ export const CartProvider = ({ children }) => {
         alert("El producto ya se encuentra en el carrito");
       }
       else {
-        setCart([...cart, {item, quantity}]);
+        setCart([...cart, {...item, quantity}]);
         alert ("Producto agregado al carrito");
       };
 
-      console.log('cart', [...cart, {item, quantity}]);
+      console.log('cart', [...cart, {...item, quantity}]);
 
     };
   
@@ -28,19 +28,11 @@ export const CartProvider = ({ children }) => {
   };
 
   const removeItem = (itemId) => {
-
-    let index = cart.findIndex((item) => item.id === itemId);
-    let newCart = [];
-    cart.forEach((item) => {
-      if (item.id !== itemId) {
-        newCart.push(item);
-      }
-    });
-    setCart(newCart);
+    setCart(cart.filter((item) => item.id !== itemId));
     };
   
   return (
-    <CartContext.Provider value={{ cart, addItem, removeItem }}>
+    <CartContext.Provider value={{ cart, addItem, removeItem, clear }}>
         {children}
     </CartContext.Provider>
   );
