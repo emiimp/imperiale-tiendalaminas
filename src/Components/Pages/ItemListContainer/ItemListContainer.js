@@ -16,7 +16,8 @@ export const ItemListContainer = () => {
 
   useEffect (() => {
     getDocs (querySnapshot).then((answer) => {
-      const products = answer.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
+      const products = answer.docs.map((doc) => ({ _id: doc.id, ...doc.data() }));
+      console.log(products);
       setProductList(products);
     });
   }, [category]);

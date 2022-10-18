@@ -69,7 +69,7 @@ export const Cart = () => {
         
         <h2>Carrito</h2>
 
-        {Cart.length === 0 ? (
+        {cart.length === 0 ? (
             
             <>
 
@@ -81,7 +81,7 @@ export const Cart = () => {
         ):(
                 <>
 
-                    {Cart.map((item) => (
+                    {cart.map((item) => (
                     <div key={item.id}>
                         <img src={item.image} alt={item.title}/>
                         <h3>{item.title}</h3>

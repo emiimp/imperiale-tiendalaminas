@@ -8,7 +8,6 @@ const NavBar = () => {
                 <li><NavLink  to={"/laminas"}>Nuestras láminas</NavLink ></li>
                 <li><NavLink  to={"/category/photography"}>Fotografía</NavLink ></li>
                 <li><NavLink  to={"/category/painting"}>Pintura</NavLink ></li>
-                <li><NavLink  to={"/contacto"}>Contacto</NavLink ></li>
                 <li><NavLink  to={"/cart"}>Carrito de compras</NavLink ></li>
             </ul>
         </nav>

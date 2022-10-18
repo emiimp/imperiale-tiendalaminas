@@ -10,7 +10,7 @@ const ItemList = ({ lista }) => {
             lista.map((item)=>(
               <Link 
                 key={item.id}
-                to={"/detail/ + item.id"}
+                to={`/detail/${item._id}`}
               >
                 <Item 
                   id={item.id}
